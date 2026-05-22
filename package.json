@@ -1,0 +1,45 @@
+{
+  "name": "av3-fakestore-enzo",
+  "version": "1.0.0",
+  "description": "Aplicação Ionic Tabs para consumir produtos da FakeStore API - AV3 Mobile",
+  "author": "Enzo Fernandes de Oliveira",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --port 8100",
+    "build": "ng build",
+    "ionic:build": "ionic build",
+    "android:add": "ionic cap add android",
+    "android:copy": "ionic cap copy android",
+    "android:open": "ionic cap open android",
+    "serve": "ng serve --port 8100"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.0",
+    "@angular/common": "^18.2.0",
+    "@angular/compiler": "^18.2.0",
+    "@angular/core": "^18.2.0",
+    "@angular/forms": "^18.2.0",
+    "@angular/platform-browser": "^18.2.0",
+    "@angular/platform-browser-dynamic": "^18.2.0",
+    "@angular/router": "^18.2.0",
+    "@capacitor/android": "^6.1.2",
+    "@capacitor/app": "^6.0.1",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/haptics": "^6.0.1",
+    "@capacitor/keyboard": "^6.0.2",
+    "@capacitor/status-bar": "^6.0.1",
+    "@ionic/angular": "^8.4.0",
+    "ionicons": "^7.4.0",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.8.1",
+    "zone.js": "~0.14.10"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.0",
+    "@angular/cli": "^18.2.0",
+    "@angular/compiler-cli": "^18.2.0",
+    "@capacitor/cli": "^6.1.2",
+    "typescript": "~5.5.4"
+  }
+}

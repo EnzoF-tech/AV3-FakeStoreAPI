@@ -1,0 +1,51 @@
+.action-card,
+.filter-card,
+.state-card,
+.list-card {
+  max-width: 760px;
+  margin: 16px auto;
+  border: var(--app-soft-border);
+}
+
+.state-card {
+  text-align: center;
+}
+
+.list-content {
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.thumb {
+  background: var(--app-image-bg);
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  min-height: 150px;
+}
+
+.thumb img {
+  max-width: 100%;
+  max-height: 130px;
+  object-fit: contain;
+}
+
+.text-content ion-card-header {
+  padding-bottom: 0;
+}
+
+ion-chip {
+  margin-left: 0;
+}
+
+@media (max-width: 560px) {
+  .list-content {
+    grid-template-columns: 1fr;
+  }
+
+  .thumb {
+    min-height: 190px;
+  }
+}

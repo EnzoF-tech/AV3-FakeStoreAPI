@@ -1,0 +1,7 @@
+{
+  "name": "AV3 FakeStore Enzo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

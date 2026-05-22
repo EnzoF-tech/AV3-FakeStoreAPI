@@ -1,0 +1,40 @@
+.product-card {
+  max-width: 560px;
+  margin: 16px auto;
+  border: var(--app-soft-border);
+}
+
+.state-card {
+  max-width: 560px;
+  margin: 16px auto;
+  text-align: center;
+}
+
+.meta-row,
+.navigation-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.navigation-row {
+  max-width: 560px;
+  margin: 18px auto;
+  padding-bottom: 12px;
+}
+
+.navigation-row ion-button {
+  flex: 1 1 185px;
+}
+
+.counter {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+}
+
+ion-chip {
+  margin-left: 0;
+}

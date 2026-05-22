@@ -1,0 +1,36 @@
+:root {
+  --ion-color-primary: #3159ff;
+  --ion-color-primary-rgb: 49, 89, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #2b4ee0;
+  --ion-color-primary-tint: #466aff;
+
+  --ion-color-secondary: #00b8a9;
+  --ion-color-secondary-rgb: 0, 184, 169;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #00a295;
+  --ion-color-secondary-tint: #1ac0b2;
+
+  --ion-font-family: Inter, Roboto, Arial, sans-serif;
+  --ion-background-color: #f4f7fb;
+  --ion-text-color: #13213d;
+
+  /* CSS Custom Properties exigidas no trabalho */
+  --app-background-gradient: linear-gradient(180deg, #eef3ff 0%, #f9fbff 48%, #ffffff 100%);
+  --app-card-radius: 22px;
+  --app-card-shadow: 0 16px 35px rgba(19, 33, 61, 0.14);
+  --app-image-bg: #ffffff;
+  --app-soft-border: 1px solid rgba(49, 89, 255, 0.14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color: #101725;
+    --ion-text-color: #f4f7fb;
+    --app-background-gradient: linear-gradient(180deg, #0f172a 0%, #111827 55%, #0b1120 100%);
+    --app-card-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
+    --app-image-bg: #ffffff;
+  }
+}

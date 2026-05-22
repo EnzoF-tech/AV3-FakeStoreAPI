@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
+ion-content {
+  --background: var(--app-background-gradient);
+}
+
+ion-card {
+  border-radius: var(--app-card-radius);
+  box-shadow: var(--app-card-shadow);
+  overflow: hidden;
+}
+
+ion-button {
+  font-weight: 700;
+  text-transform: none;
+}
+
+.page-padding {
+  padding: 14px;
+}
+
+.product-image-box {
+  width: 100%;
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  background: var(--app-image-bg);
+  padding: 18px;
+}
+
+.product-image-box img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.price {
+  color: var(--ion-color-primary);
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 8px 0;
+}
+
+.description {
+  line-height: 1.45;
+  color: var(--ion-color-step-650);
+}
+
+
+/* Cabeçalhos normais: não deixam o conteúdo passar por baixo do título. */
+ion-header ion-toolbar {
+  --min-height: 56px;
+}
+
+ion-content::part(scroll) {
+  scroll-padding-top: 0;
+}
+
+/*
+  Layout final das abas:
+  A barra inferior NÃO é fixa. Ela ocupa espaço real na tela,
+  então não cobre botões, palavra-chave nem cards.
+*/
+app-tabs {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.tabs-layout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--app-background-gradient);
+}
+
+.tabs-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs-content ion-router-outlet {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.custom-tab-bar {
+  flex: 0 0 auto;
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  z-index: 10;
+  min-height: calc(74px + var(--ion-safe-area-bottom));
+  padding-bottom: var(--ion-safe-area-bottom);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* Folga extra só para o último conteúdo não ficar colado no rodapé. */
+ion-content::part(scroll) {
+  padding-bottom: 24px;
+}
+
+@media (max-width: 420px) {
+  .custom-tab-bar {
+    min-height: calc(82px + var(--ion-safe-area-bottom));
+  }
+}

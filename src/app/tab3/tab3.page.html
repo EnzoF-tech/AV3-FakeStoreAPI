@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Todos os produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="page-padding">
+    <ion-card class="action-card">
+      <ion-card-header>
+        <ion-card-title>Lista completa da FakeStore API</ion-card-title>
+        <ion-card-subtitle>Use o botão 1 para apresentar todos os produtos.</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-button expand="block" (click)="showProducts()" [disabled]="loading || showAllProducts">
+          <ion-icon name="grid-outline" slot="start"></ion-icon>
+          Botão 1 - Apresentar todos os produtos
+        </ion-button>
+
+        <ion-button expand="block" color="medium" *ngIf="showAllProducts" (click)="hideProducts()">
+          <ion-icon name="trash-outline" slot="start"></ion-icon>
+          Suprimir lista da tela
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="loading" class="state-card">
+      <ion-card-content>
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Carregando produtos...</p>
+      </ion-card-content>
+    </ion-card>
+
+    <div *ngIf="showAllProducts">
+      <ion-card class="filter-card">
+        <ion-item lines="none">
+          <ion-icon name="search-outline" slot="start" color="primary"></ion-icon>
+          <ion-input
+            label="Filtrar produtos"
+            labelPlacement="stacked"
+            placeholder="Digite nome, categoria ou descrição"
+            [(ngModel)]="searchTerm">
+          </ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-card class="list-card" *ngFor="let product of filteredProducts">
+        <div class="list-content">
+          <div class="thumb">
+            <img [src]="product.image" [alt]="product.title">
+          </div>
+
+          <div class="text-content">
+            <ion-card-header>
+              <ion-card-title>{{ product.title }}</ion-card-title>
+              <ion-card-subtitle>
+                <ion-chip color="primary">{{ product.category }}</ion-chip>
+              </ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="price">{{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
+              <p class="description">{{ product.description }}</p>
+            </ion-card-content>
+          </div>
+        </div>
+      </ion-card>
+
+      <ion-card class="state-card" *ngIf="!filteredProducts.length && !loading">
+        <ion-card-content>
+          Nenhum produto encontrado com esse filtro.
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

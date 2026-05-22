@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Produtos - um por um</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="page-padding">
+    <ion-card *ngIf="loading" class="state-card">
+      <ion-card-content>
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Carregando produtos da FakeStore API...</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="!loading && !currentProduct" class="state-card">
+      <ion-card-content>
+        Não foi possível carregar a lista de produtos. Confira sua conexão com a internet.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="currentProduct as product" class="product-card">
+      <div class="product-image-box">
+        <img [src]="product.image" [alt]="product.title">
+      </div>
+
+      <ion-card-header>
+        <ion-card-title>{{ product.title }}</ion-card-title>
+        <ion-card-subtitle>
+          <ion-chip color="primary">{{ product.category }}</ion-chip>
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p class="price">{{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
+        <p class="description">{{ product.description }}</p>
+
+        <div class="meta-row">
+          <ion-badge color="medium">ID: {{ product.id }}</ion-badge>
+          <ion-badge color="warning" *ngIf="product.rating">
+            <ion-icon name="star-outline"></ion-icon>
+            {{ product.rating.rate }} / {{ product.rating.count }} avaliações
+          </ion-badge>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="navigation-row">
+      <ion-button
+        fill="outline"
+        (click)="previousProduct()"
+        [disabled]="loading || currentIndex === 0">
+        <ion-icon name="arrow-back-circle-outline" slot="start"></ion-icon>
+        Botão 2 - Anterior
+      </ion-button>
+
+      <ion-badge color="primary" class="counter" *ngIf="products.length">
+        {{ currentIndex + 1 }} / {{ products.length }}
+      </ion-badge>
+
+      <ion-button
+        (click)="nextProduct()"
+        [disabled]="loading || currentIndex === products.length - 1 || products.length === 0">
+        Botão 1 - Próximo
+        <ion-icon name="arrow-forward-circle-outline" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

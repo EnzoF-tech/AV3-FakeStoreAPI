@@ -1,0 +1,9 @@
+node_modules/
+www/
+dist/
+coverage/
+.DS_Store
+*.log
+android/
+ios/
+.vscode/
